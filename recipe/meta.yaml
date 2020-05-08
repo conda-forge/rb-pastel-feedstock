@@ -1,5 +1,5 @@
 {% set name = "pastel" %}
-{% set version = "0.7.3" %}
+{% set version = "0.7.4" %}
 
 package:
   name: rb-{{ name|lower }}
@@ -7,14 +7,13 @@ package:
 
 source:
   url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem
-  sha256: f577708463313119d2f7303eefb24217879d188e94f2eea8a19373fdcee48354
+  sha256: cc3b26fa5124c7c20250511969bfdeb36ac46d682a5f1a2fa4c22f044204feee
 
 build:
   noarch: generic
-  number: 1
+  number: 0
   script:
-    - gem install --norc -l -V --ignore-dependencies {{ name }}-{{ version }}.gem
-      && gem unpack {{ name }}-{{ version }}.gem
+    - gem install --norc -l -V --ignore-dependencies {{ name }}-{{ version }}.gem && gem unpack {{ name }}-{{ version }}.gem
   skip: {{ win }}
 
 requirements:
@@ -34,7 +33,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: {{ name }}-{{ version }}/LICENSE.txt
-  summary: 'Terminal output styling with intuitive and clean API that does not monkey patch String class.'
+  summary: Terminal output styling with intuitive and clean API that does not monkey patch String class.
   doc_url: https://www.rubydoc.info/gems/{{ name }}
   dev_url: https://github.com/piotrmurach/pastel
 
