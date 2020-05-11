@@ -13,14 +13,14 @@ build:
   noarch: generic
   number: 0
   script:
-    - gem install --norc -l -V --ignore-dependencies {{ name }}-{{ version }}.gem && gem unpack {{ name }}-{{ version }}.gem
+    - gem install --norc -N -l -V --ignore-dependencies {{ name }}-{{ version }}.gem && gem unpack {{ name }}-{{ version }}.gem
   skip: {{ win }}
 
 requirements:
   host:
-    - ruby >=2.5
+    - ruby
   run:
-    - ruby >=2.5
+    - ruby
     - rb-equatable >=0.6,<1
     - rb-tty-color >=0.5,<1
 
