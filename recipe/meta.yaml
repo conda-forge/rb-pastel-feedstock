@@ -26,7 +26,7 @@ requirements:
 
 test:
   commands:
-    - gem list -i {{ name }} -v {{ version }}
+    - gem list | grep -s {{ name }}
 
 about:
   home: https://rubygems.org/gems/{{ name }}
