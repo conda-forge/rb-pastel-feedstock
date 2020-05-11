@@ -18,15 +18,15 @@ build:
 
 requirements:
   host:
-    - ruby
+    - ruby >=2.5
   run:
-    - ruby
+    - ruby >=2.5
     - rb-equatable >=0.6,<1
     - rb-tty-color >=0.5,<1
 
 test:
   commands:
-    - gem list | grep -s {{ name }}
+    - ruby -r {{ name }} -e 'exit 0'
 
 about:
   home: https://rubygems.org/gems/{{ name }}
