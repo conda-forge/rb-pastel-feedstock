@@ -19,7 +19,7 @@ build:
 
 requirements:
   host:
-    - ruby >=2.5
+    - ruby
   run:
     - {{ pin_compatible('ruby', max_pin='x.x') }}
     - rb-equatable >=0.6,<1
