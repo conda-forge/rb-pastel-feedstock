@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - ruby
+    - {{ pin_compatible('ruby', max_pin='x.x') }}
   run:
     - {{ pin_compatible('ruby', max_pin='x.x') }}
-    - rb-equatable >=0.6,<1
-    - rb-tty-color >=0.5,<1
+    - rb-equatable >=0.6
+    - rb-tty-color >=0.5
 
 test:
   commands:
