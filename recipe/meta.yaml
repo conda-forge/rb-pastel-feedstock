@@ -19,7 +19,7 @@ build:
 
 requirements:
   host:
-    - ruby >=2.7
+    - ruby >=2.5,<2.7
   run:
     - {{ pin_compatible('ruby', max_pin='x.x') }}
     - rb-tty-color >=0.5
