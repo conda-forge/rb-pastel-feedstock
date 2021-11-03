@@ -11,18 +11,18 @@ source:
 
 build:
   noarch: generic
-  number: 1
+  number: 2
   script:
-    - gem install --norc -N -l -V --ignore-dependencies {{ name }}-{{ version }}.gem && gem unpack {{ name }}-{{ version }}.gem
+    - gem install -N -l -V --norc --ignore-dependencies -n $PREFIX/bin {{ name }}-{{ version }}.gem 
+    - gem unpack {{ name }}-{{ version }}.gem
   skip: {{ win }}
 
 requirements:
   host:
-    - ruby >=2.5
+    - ruby >=2.5,<2.7
   run:
-    - ruby >=2.5
-    - rb-equatable >=0.6,<1
-    - rb-tty-color >=0.5,<1
+    - {{ pin_compatible('ruby', max_pin='x.x') }}
+    - rb-tty-color >=0.5
 
 test:
   commands:
@@ -41,6 +41,3 @@ extra:
   recipe-maintainers:
     - mxr-conda
     - sodre
-    - rluria14
-    - adbeda
-    - oblute
